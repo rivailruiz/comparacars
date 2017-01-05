@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ComparativoPage } from '../pages/comparativo/comparativo';
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -15,6 +16,7 @@ import { ComparativoPage } from '../pages/comparativo/comparativo';
     HomePage,
     TabsPage,
     ComparativoPage
+    
   ],
   imports: [
     IonicModule.forRoot(MyApp)

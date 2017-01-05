@@ -1,71 +1,77 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Compara Cars</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Compara Cars</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <img src="img/logo.jpeg" alt="">
-  <h3>Selecione na lista:</h3>
-  <ion-item>
-  <ion-label>Carro</ion-label>
-    <ion-select>
-      <ion-option>
-        Gurgel
-      </ion-option>
-      <ion-option>
-        Pajero
-      </ion-option>
-      <ion-option>
-        Clio
-      </ion-option>
-      <ion-option>
-        Corsa
-      </ion-option>
-      <ion-option>
-        Symbol
-      </ion-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-      <ion-label>Marca</ion-label>
-    <ion-select>
-      <ion-option>
-        Chevrolet
-      </ion-option>
-      <ion-option>
-        Wolkswagen
-      </ion-option>
-      <ion-option>
-        Fiat
-      </ion-option>
-      <ion-option>
-        Gurgel
-      </ion-option>
-      <ion-option>
-        Renault
-      </ion-option>
-    </ion-select>
-  </ion-item>
+    <img src="img/logo.png" alt="">
+    <h3>Selecione na lista:</h3>
+    <ion-card>
+    <ion-card-title>
+     <h3 text-center>Aqui o carro 1</h3>
+     <hr>
+      </ion-card-title>    
+      <ion-item>
+        <ion-label>Marca</ion-label>
+        <ion-select>
+            <ion-option *ngFor="let obj of marca">
+                {{obj.name}}
+            </ion-option>
+        </ion-select>
+    </ion-item>
     <ion-item>
-      <ion-label>Ano</ion-label>
-    <ion-select>
-      <ion-option>
-        1990
-      </ion-option>
-      <ion-option>
-        1991
-      </ion-option>
-      <ion-option>
-        1992
-      </ion-option>
-      <ion-option>
-        1993
-      </ion-option>
-      <ion-option>
-        1994
-      </ion-option>
-    </ion-select>
-  </ion-item>
-  <button ion-button full (click)="openComparativo()">Consultar</button>
+        <ion-label>Modelo - Ano</ion-label>
+        <ion-select>
+            <ion-option>
+                Gurgel
+            </ion-option>
+            <ion-option>
+                Pajero
+            </ion-option>
+            <ion-option>
+                Clio
+            </ion-option>
+            <ion-option>
+                Corsa
+            </ion-option>
+            <ion-option>
+                Symbol
+            </ion-option>
+        </ion-select>
+    </ion-item>
+    </ion-card><ion-card>
+    <ion-card-title>
+     <h3 text-center>Aqui o carro 2</h3>
+     <hr>
+      </ion-card-title>    <ion-item>
+        <ion-label>Marca</ion-label>
+        <ion-select>
+           <ion-option *ngFor="let obj of marca">
+                {{obj.name}}
+            </ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label>Modelo - Ano</ion-label>
+        <ion-select>
+            <ion-option>
+                Gurgel
+            </ion-option>
+            <ion-option>
+                Pajero
+            </ion-option>
+            <ion-option>
+                Clio
+            </ion-option>
+            <ion-option>
+                Corsa
+            </ion-option>
+            <ion-option>
+                Symbol
+            </ion-option>
+        </ion-select>
+    </ion-item>
+    </ion-card>
+    <button ion-button full (click)="openComparativo()">Consultar</button>
 </ion-content>
