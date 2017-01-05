@@ -15,7 +15,7 @@
       <ion-item>
         <ion-label>Marca</ion-label>
         <ion-select>
-            <ion-option *ngFor="let obj of marca">
+            <ion-option *ngFor="let obj of marca" [selected]="obj.name == id">
                 {{obj.name}}
             </ion-option>
         </ion-select>
@@ -23,20 +23,8 @@
     <ion-item>
         <ion-label>Modelo - Ano</ion-label>
         <ion-select>
-            <ion-option>
-                Gurgel
-            </ion-option>
-            <ion-option>
-                Pajero
-            </ion-option>
-            <ion-option>
-                Clio
-            </ion-option>
-            <ion-option>
-                Corsa
-            </ion-option>
-            <ion-option>
-                Symbol
+            <ion-option *ngFor="let obj of modelo" >
+              
             </ion-option>
         </ion-select>
     </ion-item>
@@ -55,20 +43,8 @@
     <ion-item>
         <ion-label>Modelo - Ano</ion-label>
         <ion-select>
-            <ion-option>
-                Gurgel
-            </ion-option>
-            <ion-option>
-                Pajero
-            </ion-option>
-            <ion-option>
-                Clio
-            </ion-option>
-            <ion-option>
-                Corsa
-            </ion-option>
-            <ion-option>
-                Symbol
+            <ion-option *ngFor="let obj of modelo" >
+               {{obj.name}}
             </ion-option>
         </ion-select>
     </ion-item>
