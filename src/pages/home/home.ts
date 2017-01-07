@@ -25,13 +25,12 @@ export class HomePage {
 
   		this.viewListaMarcas();
   		this.viewListaModelos(this.id);
-  		this.onChange(this.newValue);
   }
   viewListaMarcas(){
  	this.Lista.getLista()
  	.then(data => {
  		this.marca = data;
- 		console.log(this.marca);
+ 		// console.log(this.marca);
  	});
   }
 

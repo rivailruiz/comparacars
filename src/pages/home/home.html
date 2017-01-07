@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-    <img src="img/logo.png" alt="">
+    <img src="img/logo.jpg" alt="">
     <h3>Selecione na lista:</h3>
     <ion-card>
     <ion-card-title>
@@ -22,13 +22,13 @@
     </ion-item>
     <ion-item>
         <ion-label>Modelo</ion-label>
-        <ion-select *ngIf="selectedItem">
+        <ion-select [disabled]="!selectedItem">
             <ion-option *ngFor="let obj of modelo">
               {{obj.name}}
             </ion-option>
         </ion-select>
     </ion-item>
-    </ion-card><!-- <ion-card>
+    </ion-card><ion-card>
     <ion-card-title>
      <h3 text-center>Aqui o carro 2</h3>
      <hr>
@@ -48,6 +48,6 @@
             </ion-option>
         </ion-select>
     </ion-item>
-    </ion-card> -->
+    </ion-card>
     <button ion-button full (click)="openComparativo()">Consultar</button>
-</ion-content>
+</ion-content> 
