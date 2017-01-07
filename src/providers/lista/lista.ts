@@ -41,8 +41,8 @@ export class ListaService {
 
     return new Promise(resolve => {
 
-      // this.http.get(`http://fipeapi.appspot.com/api/1/carros/veiculos/${id}.json`)
-      this.http.get(`http://fipeapi.appspot.com/api/1/carros/veiculos/13.json`)
+      this.http.get(`http://fipeapi.appspot.com/api/1/carros/veiculos/${id}.json`)
+      // this.http.get(`http://fipeapi.appspot.com/api/1/carros/veiculos/23.json`)
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;

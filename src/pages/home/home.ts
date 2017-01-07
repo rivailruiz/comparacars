@@ -3,6 +3,7 @@ import { NavController, ModalController } from 'ionic-angular';
 import { ComparativoPage } from '../comparativo/comparativo';
 import { ListaService } from '../../providers/lista/lista';
 
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
@@ -13,14 +14,18 @@ export class HomePage {
 	public name;
 	public id;
 	public modelo;
+	public obj;
+	public newValue;
 
   constructor(
   	public Lista: ListaService,
   	public navCtrl: NavController,
   	public modalCtrl: ModalController,
   	) {
+
   		this.viewListaMarcas();
   		this.viewListaModelos(this.id);
+  		this.onChange(this.newValue);
   }
   viewListaMarcas(){
  	this.Lista.getLista()
@@ -38,6 +43,10 @@ export class HomePage {
  	});
   }
 
+  onChange(newValue) {
+    console.log(newValue);
+    this.obj = newValue;  
+}
 
   openComparativo(){
   	let comparativoModal = this.modalCtrl.create(ComparativoPage);
