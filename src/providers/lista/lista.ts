@@ -6,12 +6,14 @@ import 'rxjs/add/operator/map';
 export class ListaService {
 
 	private data: any;
+  private datax: any;
 
   constructor(public http: Http) {
     this.data = null;
+    this.datax = null;
   }
   // Get de todas as marcas
-    getLista() {
+    getMarcas() {
     if (this.data) {
       // already loaded data
       return Promise.resolve(this.data);
@@ -35,8 +37,8 @@ export class ListaService {
 
    // Get modelos da marca selecionada
     getModelos(id) {
-    if (this.data) {
-      return Promise.resolve(this.data);
+    if (this.datax) {
+      return Promise.resolve(this.datax);
     }
 
     return new Promise(resolve => {
@@ -44,9 +46,9 @@ export class ListaService {
       this.http.get(`http://fipeapi.appspot.com/api/1/carros/veiculos/${id}.json`)
       // this.http.get(`http://fipeapi.appspot.com/api/1/carros/veiculos/23.json`)
         .map(res => res.json())
-        .subscribe(data => {
-          this.data = data;
-          resolve(this.data);
+        .subscribe(datax => {
+          this.datax = datax;
+          resolve(this.datax);
         });
     });
   }
