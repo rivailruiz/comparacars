@@ -14,8 +14,8 @@
       </ion-card-title>    
       <ion-item>
         <ion-label>Marca</ion-label>
-        <ion-select [(ngModel)]="selectedItem" (ngModelChange)="onChangeItem1($event.id)">
-            <ion-option [value]="obj" *ngFor="let obj of marca1">
+        <ion-select [(ngModel)]="selectedItem" (ngModelChange)="onChangeMarca($event.id)">
+            <ion-option [value]="obj" *ngFor="let obj of marca">
                 {{obj.name}}
             </ion-option>
         </ion-select>
@@ -23,7 +23,7 @@
     <ion-item>
         <ion-label>Modelo</ion-label>
         <ion-select *ngIf="selectedItem">
-            <ion-option *ngFor="let obj of modelo1">
+            <ion-option *ngFor="let obj of modelo">
               {{obj.name}}
             </ion-option>
         </ion-select>
@@ -31,7 +31,7 @@
     </ion-card>
 
 
-
+<!-- 
   <ion-card>
   <ion-card-title>
      <h3 text-center>Aqui o carro 2</h3>
@@ -40,7 +40,7 @@
     <ion-item>
         <ion-label>Marca</ion-label>
         <ion-select [(ngModel)]="selectedItem" (ngModelChange)="onChangeItem2($event.id)">
-            <ion-option [value]="obj" *ngFor="let obj of marca2">
+            <ion-option [value]="obj" *ngFor="let obj of marca">
                 {{obj.name}}
             </ion-option>
         </ion-select>
@@ -48,11 +48,11 @@
     <ion-item>
         <ion-label>Modelo</ion-label>
         <ion-select *ngIf="selectedItem">
-            <ion-option *ngFor="let obj of modelo2">
+            <ion-option *ngFor="let obj of modelo">
               {{obj.name}}
             </ion-option>
         </ion-select>
     </ion-item>
-  </ion-card> 
+  </ion-card>  -->
     <button ion-button full (click)="openComparativo()">Consultar</button>
 </ion-content>
