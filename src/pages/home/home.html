@@ -1,19 +1,16 @@
-<ion-header>
-    <ion-navbar>
-        <ion-title>Compara Cars</ion-title>
-    </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-    <img src="img/logo.png" alt="">
-    <h3>Selecione na lista:</h3>
+<ion-content class="home" padding>
+    <div class="logo" text-center>
+      <img src="img/logo.png" alt="">
+    </div>
+    
+    <h3 text-center class="white">Selecione na lista:</h3>
     <ion-card>
     <ion-card-title>
-     <h3 text-center>Aqui o carro 1</h3>
+     <h3 text-center>Carro 1:</h3>
      <hr>
       </ion-card-title>    
       <ion-item>
-        <ion-label>Marca</ion-label>
+        <ion-label>Selecione a marca</ion-label>
         <ion-select [(ngModel)]="selectedItem" (ngModelChange)="onChangeMarca($event.id)">
             <ion-option [value]="obj" *ngFor="let obj of marca">
                 {{obj.name}}
@@ -21,7 +18,7 @@
         </ion-select>
     </ion-item>
     <ion-item>
-        <ion-label>Modelo</ion-label>
+        <ion-label>Selecione o modelo</ion-label>
         <ion-select *ngIf="selectedItem">
             <ion-option *ngFor="let obj of modelo">
               {{obj.name}}
@@ -54,5 +51,5 @@
         </ion-select>
     </ion-item>
   </ion-card>  -->
-    <button ion-button full (click)="openComparativo()">Consultar</button>
+    <button ion-button full (click)="nextpage()">Próximo</button>
 </ion-content>

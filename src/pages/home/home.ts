@@ -63,4 +63,10 @@ export class HomePage {
 
 
 
+nextpage(){
+  
+}
+
+
+
 }
