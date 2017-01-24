@@ -6,6 +6,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ComparativoPage } from '../pages/comparativo/comparativo';
+import { SecondPage } from '../pages/secondpage/secondpage';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ComparativoPage } from '../pages/comparativo/comparativo';
     ContactPage,
     HomePage,
     TabsPage,
-    ComparativoPage
+    ComparativoPage,
+    SecondPage
     
   ],
   imports: [
@@ -28,7 +30,8 @@ import { ComparativoPage } from '../pages/comparativo/comparativo';
     ContactPage,
     HomePage,
     TabsPage,
-    ComparativoPage
+    ComparativoPage,
+    SecondPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { ComparativoPage } from '../comparativo/comparativo';
 import { ListaService } from '../../providers/lista/lista';
+import { SecondPage } from '../secondpage/secondpage';
+
 
 
 @Component({
@@ -64,7 +66,7 @@ export class HomePage {
 
 
 nextpage(){
-  
+  this.navCtrl.push(SecondPage);
 }
 
 
