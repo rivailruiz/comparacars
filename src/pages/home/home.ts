@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
-import { ComparativoPage } from '../comparativo/comparativo';
 import { ListaService } from '../../providers/lista/lista';
 import { SecondPage } from '../secondpage/secondpage';
 
@@ -48,7 +47,7 @@ export class HomePage {
 
   onChangeMarca(idDaMarca) {
     this.obj = idDaMarca;  
-    console.log(idDaMarca);
+    // console.log(idDaMarca);
     this.viewListaModelosItem1(idDaMarca);
 }
 
@@ -57,15 +56,7 @@ export class HomePage {
     this.obj = idDoCarro;  
 }
 
-  openComparativo(){
-  	let comparativoModal = this.modalCtrl.create(ComparativoPage);
-   comparativoModal.present();
-  }
-
-
-
-
-nextpage(){
+nextpage(obj){
   this.navCtrl.push(SecondPage);
 }
 

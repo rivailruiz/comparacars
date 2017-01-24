@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { ComparativoPage } from '../comparativo/comparativo';
+import { ListaService } from '../../providers/lista/lista';
 
 /*
   Generated class for the Secondpage page.
@@ -10,20 +11,35 @@ import { ComparativoPage } from '../comparativo/comparativo';
 */
 @Component({
   selector: 'page-secondpage',
-  templateUrl: 'secondpage.html'
+  templateUrl: 'secondpage.html',
+  providers: [ListaService]
 })
 export class SecondPage {
+
+	public marca;
+	public obj;
 
   constructor(
   	public navCtrl: NavController,
   	public navParams: NavParams,
-  	public modalCtrl: ModalController
-  	) {}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SecondpagePage');
+  	public modalCtrl: ModalController,
+  	public Lista: ListaService
+  	) {
+  	this.viewListaMarcasItem1();
   }
 
+  ionViewDidLoad() {
+    console.log(this.obj);
+  }
+
+	viewListaMarcasItem1(){
+		this.Lista.getMarcas()
+		.then(data => {
+			this.marca = data;
+			// console.log(this.marca);
+			console.log("Carreguei as marcas!");
+		});
+	}
 	openComparativo(){
 		let comparativoModal = this.modalCtrl.create(ComparativoPage);
 	comparativoModal.present();

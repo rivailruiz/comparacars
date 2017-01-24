@@ -1,3 +1,8 @@
+<ion-header>
+<button ion-button out-line color="dark" clear>
+  <ion-icon></ion-icon>  
+</button>
+</ion-header>
 <ion-content class="home" padding>
     <div class="logo" text-center>
       <img src="img/logo.png" alt="">
@@ -19,12 +24,12 @@
     </ion-item>
     <ion-item>
         <ion-label>Selecione o modelo</ion-label>
-        <ion-select *ngIf="selectedItem">
-            <ion-option *ngFor="let obj of modelo">
+        <ion-select *ngIf="selectedItem" [(ngModel)]="selectedModelo" (ngModelChange)="onChangeModelo($event.id)">
+            <ion-option [value]="obj" *ngFor="let obj of modelo">
               {{obj.name}}
             </ion-option>
         </ion-select>
     </ion-item>
     </ion-card>
-    <button ion-button full (click)="nextpage()">Próximo</button>
+    <button ion-button full (click)="nextpage(obj)">Próximo</button>
 </ion-content>
